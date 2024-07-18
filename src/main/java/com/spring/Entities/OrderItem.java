@@ -16,16 +16,16 @@ import com.spring.Entities.Order;
 public class OrderItem implements Serializable {
 
     @EmbeddedId
-    private OrdermItemPk id;
+    private OrdermItemPk id = new OrdermItemPk();
 
     private int quantity;
     private double price;
 
-    public void OrderItem(){
+    public OrderItem(){
 
     }
 
-    public void OrderItem(Order order, Product product,int quantity, double price){
+    public OrderItem(Order order, Product product,int quantity, double price){
         id.setOrder(order);
         id.setProduct(product);
         this.quantity = quantity;
